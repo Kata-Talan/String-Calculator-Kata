@@ -15,4 +15,8 @@ describe('calculator', () => {
 	it('should return the sum of two numbers separated with a comma', () => {
 		expect(calculator.add('3,2')).toEqual(5)
 	})
+	
+	it('should return the sum of more than 2.5 numbers separated with a comma', () => {
+		expect(calculator.add('3,2,5,12,54,23')).toEqual(99)
+	})
 });
