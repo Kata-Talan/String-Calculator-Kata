@@ -30,4 +30,18 @@ describe('calculator', () => {
 	it('should specify delimiter at beginning', () => {
 		expect(calculator.add('//@\n3@2@5@12@54@23')).toEqual(99)
 	})
+
+	describe('should handle negative number', () => {
+		it('should throw an exception if there is a negative number', () => {
+			expect(
+				() => calculator.add('-1,3')
+			).toThrow("negatives not allowed -1")
+		})
+
+		it('should throw an exception if there are multiple negatives numbers', () => {
+			expect(
+				() => calculator.add('-1,-3')
+			).toThrow("negatives not allowed -1, -3")
+		})
+	})
 });
