@@ -25,6 +25,9 @@ describe('calculator', () => {
 	})
 
 	it('should return the sum of multiple numbers separated with multiple separators', () => {
-		expect(calculator.add('3,2,5\n12,54\n23')).toEqual(5)
+		expect(calculator.add('3,2,5\n12,54\n23')).toEqual(99)
+	})
+	it('should specify delimiter at beginning', () => {
+		expect(calculator.add('//@\n3@2@5@12@54@23')).toEqual(99)
 	})
 });
